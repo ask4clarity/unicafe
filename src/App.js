@@ -29,12 +29,14 @@ const Statistics = ({click, allclick}) => {
   return (
     <div>
       <table>
-        <tr><StatisticLine text="good" value={click.good}/></tr>
-        <tr><StatisticLine text="neutral" value={click.neutral}/></tr>
-        <tr><StatisticLine text="bad" value={click.bad}/></tr>
-        <tr><StatisticLine text="all" value={click.good + click.neutral + click.bad}/></tr>
-        <tr><StatisticLine text="average" value={allclick.reduce((a,b) => a + b, 0) / allclick.length}/></tr>
-        <tr><StatisticLine text="positive" value={(100 * click.good) / (click.good + click.neutral + click.bad)}/></tr>
+        <tbody>
+          <tr><StatisticLine text="good" value={click.good}/></tr>
+          <tr><StatisticLine text="neutral" value={click.neutral}/></tr>
+          <tr><StatisticLine text="bad" value={click.bad}/></tr>
+          <tr><StatisticLine text="all" value={click.good + click.neutral + click.bad}/></tr>
+          <tr><StatisticLine text="average" value={allclick.reduce((a,b) => a + b, 0) / allclick.length}/></tr>
+          <tr><StatisticLine text="positive" value={(100 * click.good) / (click.good + click.neutral + click.bad) + "%"}/></tr>
+        </tbody>
       </table>
     </div>
   )
